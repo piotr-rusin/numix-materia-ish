@@ -9,3 +9,10 @@ dist
 # Jetbrains IDEs
 .idea
 *.iml
+
+# files created by checkinstall
+
+*.tgz
+description-pak
+doc-pak/*
+*.deb
