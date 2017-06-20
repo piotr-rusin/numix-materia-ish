@@ -1,7 +1,8 @@
 ## Numix-Materia-ish
-##### A fork of [Numix theme][original] with light menu and menubar colors, to be used as a base for my other forks of the original theme.
+##### A fork of [Numix theme][original] with colors based on base16-materia theme from [chriskempson/base16][base16] project.
 
 [original]: https://github.com/numixproject/numix-gtk-theme
+[base16]: https://github.com/chriskempson/base16
 
 ## Build It
 
