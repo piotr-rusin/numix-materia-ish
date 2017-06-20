@@ -1,4 +1,4 @@
-## Numix-Lithium
+## Numix-Materia-ish
 ##### A fork of [Numix theme][original] with light menu and menubar colors, to be used as a base for my other forks of the original theme.
 
 [original]: https://github.com/numixproject/numix-gtk-theme
