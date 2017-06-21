@@ -1,6 +1,6 @@
 # Numix-Materia-ish GTK Theme
 
-gtk-color-scheme = "bg_color:#eeeeee\nfg_color:#555555\nbase_color:#ffffff\ntext_color:#333333\nselected_bg_color:#f0544c\nselected_fg_color:#ffffff\ntooltip_bg_color:#444444\ntooltip_fg_color:#eeeeee\ntoolbar_bg_color:#eeeeee\ntoolbar_fg_color:#555555\npanel_bg_color:#444444\npanel_fg_color:#dddddd\nlink_color:#f06860"
+gtk-color-scheme = "bg_color:#37474f\nfg_color:#cdd3de\nbase_color:#263238\ntext_color:#cdd3de\nselected_bg_color:#4084d6\nselected_fg_color:#cdd3de\ntooltip_bg_color:#37474f\ntooltip_fg_color:#cdd3de\ntoolbar_bg_color:#37474f\ntoolbar_fg_color:#cdd3de\npanel_bg_color:#444444\npanel_fg_color:#dddddd\nlink_color:#f06860"
 
 gtk-icon-sizes = "inkscape-decoration=16,16:gtk-small-toolbar=16,16"
 

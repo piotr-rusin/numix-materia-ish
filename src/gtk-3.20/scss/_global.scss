@@ -3,22 +3,22 @@
 @import "functions";
 
 // default color scheme
-$bg_color: if($variant == "dark", #444, #dedede);
-$fg_color: if($variant == "dark", #ddd, #555);
-$base_color: if($variant == "dark", #333, #fff);
-$text_color: if($variant == "dark", #eee, #333);
-$selected_bg_color: #f0544c;
-$selected_fg_color: #fff;
-$tooltip_bg_color: #444;
-$tooltip_fg_color: #eee;
+$bg_color: if($variant == "dark", #37474f, #dedede);
+$fg_color: if($variant == "dark", #cdd3de, #555);
+$base_color: if($variant == "dark", #263238, #fff);
+$text_color: if($variant == "dark", #cdd3de, #333);
+$selected_bg_color: #4084d6;
+$selected_fg_color: #cdd3de;
+$tooltip_bg_color: #37474f;
+$tooltip_fg_color: #cdd3de;
 
 $selected_borders_color: if($variant == 'light', darken($selected_bg_color, 30%), darken($selected_bg_color, 20%));
 $borders_color: if($variant == 'light', shade($bg_color, .85), shade($bg_color, .88));
 $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
 
 // dark colors
-$dark_bg_color: #444;
-$dark_fg_color: #eee;
+$dark_bg_color: #37474f;
+$dark_fg_color: #cdd3de;
 
 // shadows
 $dark_shadow: #000;
