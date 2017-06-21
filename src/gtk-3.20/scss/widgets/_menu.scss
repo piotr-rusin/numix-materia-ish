@@ -74,8 +74,8 @@
         border: 0;
         border-radius: 0;
         padding: 0;
-        background-color: $bg_color;
-        color: $fg_color;
+        background-color: $menu_bg_color;
+        color: $menu_fg_color;
 
         .csd & { border: 0; }  // axes borders in a composited env
 
@@ -84,13 +84,13 @@
         // A little hack to get some extra space above/below menuitem separators
         separator,
         .csd & separator {
-            background-color: shade($bg_color, ($contrast + .1));
+            background-color: shade($menu_bg_color, ($contrast + .1));
             margin: 1px 0;
         }
 
         // Firefox workaround
         .separator,
-        .csd & .separator { color: shade($bg_color, ($contrast + .1)); }
+        .csd & .separator { color: shade($menu_bg_color, ($contrast + .1)); }
 
         menuitem {
             min-height: 14px;
@@ -107,7 +107,7 @@
 
             *:active, *:hover { color: $selected_fg_color; }
 
-            &:disabled, *:disabled { color: mix($fg_color, $bg_color, .5); }
+            &:disabled, *:disabled { color: mix($menu_fg_color, $menu_bg_color, .5); }
 
             // submenu indicators
             arrow {
@@ -141,7 +141,7 @@
                 }
             }
 
-            calendar { @include menu_calendar($bg_color, $fg_color); }
+            calendar { @include menu_calendar($menu_bg_color, $menu_fg_color); }
 
             // avoids labels color being overridden, see
             // https://bugzilla.gnome.org/show_bug.cgi?id=767058
@@ -155,7 +155,7 @@
             min-height: 14px;
             min-width: 14px;
             padding: $spacing;
-            background-color: $bg_color;
+            background-color: $menu_bg_color;
             border-radius: 0;
 
             &.top {
@@ -188,11 +188,11 @@
 
     menuitem {
         accelerator {
-            color: alpha($fg_color, .6);
+            color: alpha($menu_fg_color, .6);
 
             &:hover { color: alpha($selected_fg_color, .8); }
 
-            &:disabled { color: alpha(mix($fg_color, $bg_color, .5), .4); }
+            &:disabled { color: alpha(mix($menu_fg_color, $menu_bg_color, .5), .4); }
         }
 
         check, radio {
@@ -207,7 +207,7 @@
             box-shadow: 0 2px 3px alpha($black, .2);
         }
 
-        entry { @include entry($bg_color, $fg_color); }
+        entry { @include entry($menu_bg_color, $menu_fg_color); }
     }
 }
 
@@ -221,13 +221,13 @@
         padding: $spacing - 3px;
         border-radius: $roundness;
         background-clip: border-box;
-        background-color: $bg_color;
+        background-color: $menu_bg_color;
         background-image: none;
-        color: $fg_color;
+        color: $menu_fg_color;
         box-shadow: 0 3px 6px alpha($black, .16);
 
         .csd &, & {
-            @include border($bg_color);
+            @include border($menu_bg_color);
             border-width: 1px;
             border-style: solid;
         }
@@ -237,7 +237,7 @@
         treeview.view {
             &:hover, &:selected, &:selected:focus, &:backdrop:selected, &:backdrop:selected:focus { border-top-color: $selected_bg_color; }
 
-            &, &:backdrop { border-top-color: shade($bg_color, ($contrast + .4)); }
+            &, &:backdrop { border-top-color: shade($menu_bg_color, ($contrast + .4)); }
         }
 
         view, .view, list {
@@ -248,10 +248,10 @@
             }
 
             &, &:backdrop {
-                background-color: shade($bg_color, ($contrast + .5));
+                background-color: shade($menu_bg_color, ($contrast + .5));
                 background-image: none;
-                color: $fg_color;
-                border-color: border_normal($bg_color);
+                color: $menu_fg_color;
+                border-color: border_normal($menu_bg_color);
             }
         }
 
@@ -259,7 +259,7 @@
             &, & .button {
                 background-color: transparent;
                 background-image: none;
-                color: $fg_color;
+                color: $menu_fg_color;
 
                 &:focus, &:hover, &:active {
                     background-image: none;
@@ -270,15 +270,15 @@
         }
 
         .frame {
-            border-color: border_normal($bg_color);
+            border-color: border_normal($menu_bg_color);
             border-radius: $roundness;
         }
 
-        entry { @include entry($bg_color, $fg_color); }
+        entry { @include entry($menu_bg_color, $menu_fg_color); }
 
-        button { @include button($bg_color, $fg_color); }
+        button { @include button($menu_bg_color, $menu_fg_color); }
 
-        calendar { @include menu_calendar($bg_color, $fg_color); }
+        calendar { @include menu_calendar($menu_bg_color, $menu_fg_color); }
 
         > list, > .view, > toolbar {
             border-style: none;
@@ -290,9 +290,9 @@
     popover.events {
         grid.vertical {
             &, & list, & list row, & list box {
-                margin: 0;
+                margin: 0; 
                 border-radius: 0;
-                background-color: $bg_color;
+                background-color: $menu_bg_color; 
             }
         }
 
@@ -311,7 +311,7 @@
                 min-width: 20px;
                 margin: 5px;
             }
-
+ 
             & grid.horizontal day.day {
                 min-height: 24px;
                 min-width: 24px;
