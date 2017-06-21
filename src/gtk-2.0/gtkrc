@@ -1,6 +1,7 @@
 # Numix-Lithium GTK Theme
 
-gtk-color-scheme = "bg_color:#eeeeee\nfg_color:#555555\nbase_color:#ffffff\ntext_color:#333333\nselected_bg_color:#f0544c\nselected_fg_color:#ffffff\ntooltip_bg_color:#444444\ntooltip_fg_color:#eeeeee\ntoolbar_bg_color:#eeeeee\ntoolbar_fg_color:#555555\npanel_bg_color:#444444\npanel_fg_color:#dddddd\nlink_color:#f06860"
+gtk-color-scheme = "bg_color:#eeeeee\nfg_color:#555555\nbase_color:#ffffff\ntext_color:#333333\nselected_bg_color:#f0544c\nselected_fg_color:#ffffff\ntooltip_bg_color:#444444\ntooltip_fg_color:#eeeeee\ntitlebar_bg_color:#444444\ntitlebar_fg_color:#dddddd\nmenubar_bg_color:#444444\nmenubar_fg_color:#dddddd\ntoolbar_bg_color:#eeeeee\ntoolbar_fg_color:#555555\nmenu_bg_color:#444444\nmenu_fg_color:#dddddd\npanel_bg_color:#444444\npanel_fg_color:#dddddd\nlink_color:#f06860"
+
 
 gtk-icon-sizes = "inkscape-decoration=16,16:gtk-small-toolbar=16,16"
 
@@ -309,23 +310,23 @@ style "murrine-vscrollbar" = "murrine-scrollbar" { }
 # Menus
 
 style "murrine-menu" = "murrine-thin" {
-	bg[NORMAL] = @bg_color
+	bg[NORMAL] = @menu_bg_color
 	bg[PRELIGHT] = @selected_bg_color
 	bg[SELECTED] = @selected_bg_color
-	bg[ACTIVE] = @bg_color
-	bg[INSENSITIVE] = @bg_color
+	bg[ACTIVE] = @menu_bg_color
+	bg[INSENSITIVE] = @menu_bg_color
 
-	fg[NORMAL] = @fg_color
+	fg[NORMAL] = @menu_fg_color
 	fg[PRELIGHT] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
-	fg[INSENSITIVE] = mix (0.5, @bg_color, @fg_color)
+	fg[INSENSITIVE] = mix (0.5, @menu_bg_color, @menu_fg_color)
 
-	text[NORMAL] = @fg_color
+	text[NORMAL] = @menu_fg_color
 	text[PRELIGHT] = @selected_fg_color
 	text[SELECTED] = @selected_fg_color
 	text[ACTIVE] = @selected_fg_color
-	text[INSENSITIVE] = mix (0.5, @bg_color, @fg_color)
+	text[INSENSITIVE] = mix (0.5, @menu_bg_color, @menu_fg_color)
 
 	engine "murrine" {
 		roundness = 0
@@ -337,11 +338,11 @@ style "murrine-menu-item" = "murrine-wider" {
 	bg[SELECTED] = @selected_bg_color
 	bg[ACTIVE] = @selected_bg_color
 
-	fg[NORMAL] = @fg_color # Fix for XFCE menu text
+	fg[NORMAL] = @menu_fg_color # Fix for XFCE menu text
 	fg[PRELIGHT] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
-	fg[INSENSITIVE] = mix (0.5, @bg_color, @fg_color)
+	fg[INSENSITIVE] = mix (0.5, @menu_bg_color, @menu_fg_color)
 
 	engine "murrine" {
 		textstyle = 0
@@ -542,10 +543,10 @@ style "xfwm-tabwin" {
         Xfwm4TabwinWidget::alpha = 1.0
         Xfwm4TabwinWidget::border-radius = 2
 
-	bg[NORMAL] = @bg_color
-	bg[SELECTED] = @bg_color
+	bg[NORMAL] = @menu_bg_color
+	bg[SELECTED] = @menu_bg_color
 
-	fg[NORMAL] = @fg_color
+	fg[NORMAL] = @menu_fg_color
 
 	engine "murrine" {
 		contrast = 0.0
@@ -560,24 +561,24 @@ style "xfwm-tabwin-button" {
 }
 
 style "xfsm-logout" {
-	bg[NORMAL] = @bg_color
-	bg[ACTIVE] = @bg_color
-	bg[PRELIGHT] = shade (1.1, @bg_color)
-	bg[SELECTED] = shade (0.5, @bg_color)
-	bg[INSENSITIVE] = shade (1.3, @bg_color)
+	bg[NORMAL] = @menu_bg_color
+	bg[ACTIVE] = @menu_bg_color
+	bg[PRELIGHT] = shade (1.1, @menu_bg_color)
+	bg[SELECTED] = shade (0.5, @menu_bg_color)
+	bg[INSENSITIVE] = shade (1.3, @menu_bg_color)
 
-	fg[NORMAL] = @fg_color
-	fg[PRELIGHT] = @fg_color
+	fg[NORMAL] = @menu_fg_color
+	fg[PRELIGHT] = @menu_fg_color
 
-	text[NORMAL] = @fg_color
+	text[NORMAL] = @menu_fg_color
 
 	engine "murrine" {
 	}
 }
 
 style "xfsm-logout-button" {
-	bg[NORMAL] = shade (1.2, @bg_color)
-	bg[PRELIGHT] = shade (1.4, @bg_color)
+	bg[NORMAL] = shade (1.2, @menu_bg_color)
+	bg[PRELIGHT] = shade (1.4, @menu_bg_color)
 
 	engine "murrine" {
 	}
@@ -602,13 +603,13 @@ widget_class "*ThunarTreeView*" style "sidepane"
 widget_class "*ThunarLocationEntry*" style "murrine-entry"
 
 style "whiskermenu" {
-	bg[NORMAL] = @bg_color
-	bg[ACTIVE] = mix (0.21, @fg_color, @bg_color)
+	bg[NORMAL] = @menu_bg_color
+	bg[ACTIVE] = mix (0.21, @menubar_fg_color, @menubar_bg_color)
 	bg[PRELIGHT] = @selected_bg_color
 
-	fg[NORMAL] = @fg_color
-	fg[ACTIVE] = @fg_color
-	fg[PRELIGHT] = @fg_color
+	fg[NORMAL] = @menu_fg_color
+	fg[ACTIVE] = @menu_fg_color
+	fg[PRELIGHT] = @menu_fg_color
 }
 
 style "whiskermenu-scrollbar" = "murrine-scrollbar" {
@@ -640,17 +641,17 @@ style "chromium-toolbar-button" {
 }
 
 style "chrome-gtk-frame" {
-	ChromeGtkFrame::frame-color = @bg_color
-	ChromeGtkFrame::inactive-frame-color = @bg_color
+	ChromeGtkFrame::frame-color = @titlebar_bg_color
+	ChromeGtkFrame::inactive-frame-color = @titlebar_bg_color
 
 	ChromeGtkFrame::frame-gradient-size = 0
-	ChromeGtkFrame::frame-gradient-color = @bg_color
+	ChromeGtkFrame::frame-gradient-color = @titlebar_bg_color
 
-	ChromeGtkFrame::incognito-frame-color = @bg_color
-	ChromeGtkFrame::incognito-inactive-frame-color = @bg_color
+	ChromeGtkFrame::incognito-frame-color = @titlebar_bg_color
+	ChromeGtkFrame::incognito-inactive-frame-color = @titlebar_bg_color
 
 	ChromeGtkFrame::incognito-frame-gradient-size = 0
-	ChromeGtkFrame::incognito-frame-gradient-color = @bg_color
+	ChromeGtkFrame::incognito-frame-gradient-color = @titlebar_bg_color
 
 	ChromeGtkFrame::scrollbar-trough-color = @bg_color
 	ChromeGtkFrame::scrollbar-slider-normal-color =  mix (0.21, @fg_color, @bg_color)

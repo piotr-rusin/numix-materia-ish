@@ -47,7 +47,7 @@
 
     GtkTreeMenu, GtkMenuToolButton, GtkComboBox {
         &.menu, .menu {
-            background-color: $bg_color;
+            background-color: $menu_bg_color;
             margin: $spacing;
         }
     }
@@ -56,8 +56,8 @@
         padding: 0;
         border-radius: 0;
         border: 0;
-        background-color: $bg_color;
-        color: $fg_color;
+        background-color: $menu_bg_color;
+        color: $menu_fg_color;
 
         &:selected { background-color: $selected_bg_color; }
 
@@ -97,7 +97,7 @@
 
             *:active, *:hover { color: $selected_fg_color; }
 
-            &:insensitive, *:insensitive { color: mix($fg_color, $bg_color, .5); }
+            &:insensitive, *:insensitive { color: mix($menu_fg_color, $menu_bg_color, .5); }
         }
 
         &.check, &.radio {
@@ -114,7 +114,7 @@
             -GtkWidget-separator-height: 1;
 
             border-style: none;
-            color: shade($bg_color, ($contrast + .1));
+            color: shade($menu_bg_color, ($contrast + .1));
         }
 
         &.button, &.button.flat {
@@ -134,7 +134,7 @@
         }
 
         GtkCalendar {
-            &:inconsistent { color: mix($fg_color, $bg_color, .5); }
+            &:inconsistent { color: mix($menu_fg_color, $menu_bg_color, .5); }
 
             .button {
                 border-style: none;
@@ -144,14 +144,14 @@
         }
 
         .accelerator {
-            color: alpha($fg_color, .6);
+            color: alpha($menu_fg_color, .6);
 
             &:hover { color: alpha($selected_fg_color, .8); }
 
-            &:insensitive { color: alpha(mix($fg_color, $bg_color, .5), .4); }
+            &:insensitive { color: alpha(mix($menu_fg_color, $menu_bg_color, .5), .4); }
         }
 
-        .entry { @include entry($bg_color, $fg_color); }
+        .entry { @include entry($menu_bg_color, $menu_fg_color); }
     }
 
     GtkModelMenuItem GtkBox GtkImage { padding-right: $spacing; }
@@ -164,7 +164,7 @@
 
 @include exports("popover") {
     GtkPopover {
-        @include border($bg_color);
+        @include border($menu_bg_color);
 
         margin: 10px;
         padding: $spacing;
@@ -172,15 +172,15 @@
         border-width: 1px;
         border-style: solid;
         background-clip: border-box;
-        background-color: $bg_color;
+        background-color: $menu_bg_color;
         background-image: none;
-        color: $fg_color;
+        color: $menu_fg_color;
         box-shadow: 0 3px 6px alpha($black, .16);
 
         &.background {
             background-image: none;
-            background-color: $bg_color;
-            color: $fg_color;
+            background-color: $menu_bg_color;
+            color: $menu_fg_color;
         }
 
         &:backdrop { box-shadow: none; }
@@ -197,9 +197,9 @@
         }
 
         .view, .list {
-            background-color: shade($bg_color, ($contrast + .5));
+            background-color: shade($menu_bg_color, ($contrast + .5));
             background-image: none;
-            color: $fg_color;
+            color: $menu_fg_color;
 
             &:hover {
                 background-image: none;
@@ -212,7 +212,7 @@
             &, &.button {
                 background-color: transparent;
                 background-image: none;
-                color: $fg_color;
+                color: $menu_fg_color;
 
                 &:focus, &:hover, &:active {
                     background-image: none;
@@ -223,20 +223,20 @@
         }
 
         .frame {
-            border-color: border_normal($bg_color);
+            border-color: border_normal($menu_bg_color);
             border-radius: $roundness;
         }
 
-        .entry { @include entry($bg_color, $fg_color);  }
+        .entry { @include entry($menu_bg_color, $menu_fg_color);  }
 
-        .button { @include button($bg_color, $fg_color);  }
+        .button { @include button($menu_bg_color, $menu_fg_color);  }
 
         > .list, > .view, > .toolbar { background-color: transparent; }
 
         .separator {
             border: 0;
             background-color: transparent;
-            color: shade($bg_color, ($contrast + .1));
+            color: shade($menu_bg_color, ($contrast + .1));
             font-size: 80%;
             font-weight: bold;
         }
